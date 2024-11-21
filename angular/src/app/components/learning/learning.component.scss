@@ -1,0 +1,79 @@
+/* Contenedor principal */
+.learning-container {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin-top: 50px;
+    background: linear-gradient(to bottom, #f9f9f9, #e0f7fa);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Información del usuario */
+  .user-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .user-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+    border: 3px solid #4caf50;
+  }
+  
+  .smiley {
+    font-size: 50px;
+  }
+  
+  /* Barra de progreso */
+  .progress-bar {
+    width: 80%;
+    height: 20px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .progress {
+    height: 100%;
+    background: linear-gradient(to right, #4caf50, #81c784);
+    width: 0%;
+    transition: width 0.5s;
+  }
+  
+  /* Palabra a pronunciar */
+  .word-to-pronounce {
+    font-size: 20px;
+    margin: 20px;
+    color: #333;
+  }
+  
+  /* Botón */
+  .listen-button {
+    background: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .listen-button:hover {
+    background: #1976d2;
+  }
+  
+  /* Retroalimentación */
+  .feedback {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #555;
+  }
+  
