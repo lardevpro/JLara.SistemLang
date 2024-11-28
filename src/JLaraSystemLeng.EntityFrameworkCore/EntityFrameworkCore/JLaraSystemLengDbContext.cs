@@ -14,6 +14,9 @@ using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.OpenIddict.EntityFrameworkCore;
 using Volo.Abp.TenantManagement;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
+using System.Diagnostics;
+using JLaraSystemLeng.Progress;
+using JLaraSystemLeng.Sugesstions;
 
 namespace JLaraSystemLeng.EntityFrameworkCore;
 
@@ -50,6 +53,8 @@ public class JLaraSystemLengDbContext :
     public DbSet<IdentityLinkUser> LinkUsers { get; set; }
     public DbSet<IdentityUserDelegation> UserDelegations { get; set; }
     public DbSet<IdentitySession> Sessions { get; set; }
+    public DbSet<Progres> Progress { get; set; }//2º añadir modelo
+    public DbSet<Sugesstion> Sugesstions { get; set; }
 
     // Tenant Management
     public DbSet<Tenant> Tenants { get; set; }
@@ -78,7 +83,7 @@ public class JLaraSystemLengDbContext :
         builder.ConfigureOpenIddict();
         builder.ConfigureTenantManagement();
         builder.ConfigureBlobStoring();
-        
+
         /* Configure your own tables/entities inside here */
 
         //builder.Entity<YourEntity>(b =>
@@ -87,5 +92,20 @@ public class JLaraSystemLengDbContext :
         //    b.ConfigureByConvention(); //auto configure for the base class props
         //    //...
         //});
+
+        builder.Entity<Progres>(b =>
+        {
+            b.ToTable(JLaraSystemLengConsts.DbTablePrefix + nameof(Progres), JLaraSystemLengConsts.DbSchema);
+            b.ConfigureByConvention(); //auto configure for the base class props
+            b.HasOne(p => p.User).WithMany().HasForeignKey(p => p.UserId);
+            //...
+        });
+        builder.Entity<Sugesstion>(b =>
+        {
+            b.ToTable(JLaraSystemLengConsts.DbTablePrefix + nameof(Process), JLaraSystemLengConsts.DbSchema);
+            b.ConfigureByConvention(); //auto configure for the base class props
+            b.HasOne(p => p.User).WithMany().HasForeignKey(p => p.UserId);
+            //...
+        });
     }
 }

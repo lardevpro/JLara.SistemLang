@@ -29,7 +29,8 @@ namespace JLaraSystemLeng.EntityFrameworkCore;
     typeof(AbpTenantManagementEntityFrameworkCoreModule),
     typeof(BlobStoringDatabaseEntityFrameworkCoreModule)
     )]
-public class JLaraSystemLengEntityFrameworkCoreModule : AbpModule
+[DependsOn(typeof(AbpEntityFrameworkCoreModule))]
+    public class JLaraSystemLengEntityFrameworkCoreModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)
     {
