@@ -55,7 +55,7 @@ public class JLaraSystemLengDbContext :
     public DbSet<IdentityLinkUser> LinkUsers { get; set; }
     public DbSet<IdentityUserDelegation> UserDelegations { get; set; }
     public DbSet<IdentitySession> Sessions { get; set; }
-    public DbSet<Progres> Progress { get; set; }//2º añadir modelo
+    public DbSet<Progress.Progress> Progress { get; set; }//2º añadir modelo
     public DbSet<Sugesstion> Sugesstions { get; set; }
     public DbSet<Exercises> Exercises { get; set; }
 
@@ -96,9 +96,9 @@ public class JLaraSystemLengDbContext :
         //    //...
         //});
 
-        builder.Entity<Progres>(b =>
+        builder.Entity<Progress>(b =>
         {
-            b.ToTable(JLaraSystemLengConsts.DbTablePrefix + nameof(Progres), JLaraSystemLengConsts.DbSchema);
+            b.ToTable(JLaraSystemLengConsts.DbTablePrefix + nameof(Progress), JLaraSystemLengConsts.DbSchema);
             b.ConfigureByConvention(); //auto configure for the base class props
             b.HasOne(p => p.User).WithMany().HasForeignKey(p => p.UserId);
             //...
