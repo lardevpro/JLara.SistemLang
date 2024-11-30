@@ -17,6 +17,7 @@ using Volo.Abp.TenantManagement.EntityFrameworkCore;
 using System.Diagnostics;
 using JLaraSystemLeng.Progress;
 using JLaraSystemLeng.Sugesstions;
+using JLaraSystemLeng.Exercise;
 
 namespace JLaraSystemLeng.EntityFrameworkCore;
 
@@ -28,6 +29,7 @@ public class JLaraSystemLengDbContext :
     ITenantManagementDbContext,
     IIdentityDbContext
 {
+
     /* Add DbSet properties for your Aggregate Roots / Entities here. */
 
 
@@ -55,6 +57,7 @@ public class JLaraSystemLengDbContext :
     public DbSet<IdentitySession> Sessions { get; set; }
     public DbSet<Progres> Progress { get; set; }//2º añadir modelo
     public DbSet<Sugesstion> Sugesstions { get; set; }
+    public DbSet<Exercises> Exercises { get; set; }
 
     // Tenant Management
     public DbSet<Tenant> Tenants { get; set; }
@@ -105,6 +108,12 @@ public class JLaraSystemLengDbContext :
             b.ToTable(JLaraSystemLengConsts.DbTablePrefix + nameof(Process), JLaraSystemLengConsts.DbSchema);
             b.ConfigureByConvention(); //auto configure for the base class props
             b.HasOne(p => p.User).WithMany().HasForeignKey(p => p.UserId);
+            //...
+        });
+        builder.Entity<Exercises>(b =>
+        {
+            b.ToTable(JLaraSystemLengConsts.DbTablePrefix + "Exercises", JLaraSystemLengConsts.DbSchema);
+            b.ConfigureByConvention(); //auto configure for the base class props
             //...
         });
     }

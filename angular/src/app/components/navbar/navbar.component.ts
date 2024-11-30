@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
-import { AuthService } from '@abp/ng.core';
+import { AuthService, ConfigStateService } from '@abp/ng.core';
+import { UserData } from '@abp/ng.identity/proxy';
 
 @Component({
   selector: 'app-navbar',
@@ -13,9 +14,14 @@ import { AuthService } from '@abp/ng.core';
 export class NavbarComponent {
   [x: string]: any;
   isMenuOpen = false;
+  currentUser:any;
   logoPath = 'assets/images/logo.png';
 
-  constructor(private router: Router, private authService: AuthService) {}
+  constructor(private router: Router, private authService: AuthService, private configState : ConfigStateService) {
+
+    this.currentUser = this.configState.getOne("currentUser");
+    
+  }
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
@@ -28,9 +34,12 @@ export class NavbarComponent {
   isRouteActive(route: string): boolean {
     return this.router.url === `/${route}`;
   }
-
+  
   login(): void {
     this.authService.navigateToLogin();// Método para manejar la autenticación
+  }
+  logout():void {
+    this.authService.logout();
   }
 }
 

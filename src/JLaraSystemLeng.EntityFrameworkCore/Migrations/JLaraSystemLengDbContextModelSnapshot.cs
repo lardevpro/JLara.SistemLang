@@ -24,6 +24,73 @@ namespace JLaraSystemLeng.Migrations
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
+            modelBuilder.Entity("JLaraSystemLeng.Exercise.Exercises", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("varchar(40)")
+                        .HasColumnName("ConcurrencyStamp");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("CreationTime");
+
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnType("char(36)")
+                        .HasColumnName("CreatorId");
+
+                    b.Property<Guid?>("DeleterId")
+                        .HasColumnType("char(36)")
+                        .HasColumnName("DeleterId");
+
+                    b.Property<DateTime?>("DeletionTime")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("DeletionTime");
+
+                    b.Property<string>("DifficultyLevel")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("ExtraProperties")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("ExtraProperties");
+
+                    b.Property<string>("FocusArea")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("tinyint(1)")
+                        .HasDefaultValue(false)
+                        .HasColumnName("IsDeleted");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("LastModificationTime");
+
+                    b.Property<Guid?>("LastModifierId")
+                        .HasColumnType("char(36)")
+                        .HasColumnName("LastModifierId");
+
+                    b.Property<int?>("Phrase")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("char(36)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AppExercises", (string)null);
+                });
+
             modelBuilder.Entity("JLaraSystemLeng.Progress.Progres", b =>
                 {
                     b.Property<Guid>("Id")
@@ -52,6 +119,9 @@ namespace JLaraSystemLeng.Migrations
                         .HasColumnType("datetime(6)")
                         .HasColumnName("DeletionTime");
 
+                    b.Property<string>("DifficultyLevel")
+                        .HasColumnType("longtext");
+
                     b.Property<string>("ExtraProperties")
                         .IsRequired()
                         .HasColumnType("longtext")
@@ -74,13 +144,10 @@ namespace JLaraSystemLeng.Migrations
                     b.Property<DateTime?>("PracticeDate")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<decimal?>("PrecisiosPronunciation")
+                    b.Property<decimal?>("PronunciationAccuracy")
                         .HasColumnType("decimal(65,30)");
 
                     b.Property<string>("Recommendation")
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("TranscriptionOrigin")
                         .HasColumnType("longtext");
 
                     b.Property<Guid>("UserId")
@@ -113,9 +180,6 @@ namespace JLaraSystemLeng.Migrations
                         .HasColumnType("char(36)")
                         .HasColumnName("CreatorId");
 
-                    b.Property<DateTime?>("DateSugesstion")
-                        .HasColumnType("datetime(6)");
-
                     b.Property<Guid?>("DeleterId")
                         .HasColumnType("char(36)")
                         .HasColumnName("DeleterId");
@@ -142,6 +206,9 @@ namespace JLaraSystemLeng.Migrations
                     b.Property<Guid?>("LastModifierId")
                         .HasColumnType("char(36)")
                         .HasColumnName("LastModifierId");
+
+                    b.Property<DateTime?>("SugesstionCreationDate")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("SugesstionText")
                         .HasColumnType("longtext");
@@ -2023,6 +2090,17 @@ namespace JLaraSystemLeng.Migrations
                     b.HasKey("TenantId", "Name");
 
                     b.ToTable("AbpTenantConnectionStrings", (string)null);
+                });
+
+            modelBuilder.Entity("JLaraSystemLeng.Exercise.Exercises", b =>
+                {
+                    b.HasOne("Volo.Abp.Identity.IdentityUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("JLaraSystemLeng.Progress.Progres", b =>

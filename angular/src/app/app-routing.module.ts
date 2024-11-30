@@ -24,6 +24,10 @@ const routes: Routes = [
     loadComponent: () => import('./components/about/about.component').then(m => m.AboutComponent),
   },
   {
+    path: 'progress',
+    loadComponent: () => import('./components/progress/progress.component').then(m => m.ProgressComponent),
+  },
+  {
     path: 'learning',
     loadComponent: () => import('./components/learning/learning.component').then(m => m.LearningComponent),
   },
