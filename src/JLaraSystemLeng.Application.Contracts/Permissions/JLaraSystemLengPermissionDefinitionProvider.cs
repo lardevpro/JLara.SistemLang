@@ -25,6 +25,11 @@ public class JLaraSystemLengPermissionDefinitionProvider : PermissionDefinitionP
         progresPermission.AddChild(JLaraSystemLengPermissions.Progres.Create, L("Permission:Create"));
         progresPermission.AddChild(JLaraSystemLengPermissions.Progres.Update, L("Permission:Update"));
         progresPermission.AddChild(JLaraSystemLengPermissions.Progres.Delete, L("Permission:Delete"));
+
+        var sugesstionPermission = permisosUusario.AddPermission(JLaraSystemLengPermissions.Sugesstion.Default, L("Permission:Sugesstion"));
+        sugesstionPermission.AddChild(JLaraSystemLengPermissions.Sugesstion.Create, L("Permission:Create"));
+        sugesstionPermission.AddChild(JLaraSystemLengPermissions.Sugesstion.Update, L("Permission:Update"));
+        sugesstionPermission.AddChild(JLaraSystemLengPermissions.Sugesstion.Delete, L("Permission:Delete"));
     }
 
     private static LocalizableString L(string name)

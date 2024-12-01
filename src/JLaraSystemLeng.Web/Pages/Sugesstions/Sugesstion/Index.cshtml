@@ -1,0 +1,51 @@
+@page
+@using JLaraSystemLeng.Permissions
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Layout
+@using JLaraSystemLeng.Web.Pages.Sugesstions.Sugesstion
+@using JLaraSystemLeng.Localization
+@using JLaraSystemLeng.Web.Menus
+@model IndexModel
+@inject IPageLayout PageLayout
+@inject IHtmlLocalizer<JLaraSystemLengResource> L
+@inject IAuthorizationService Authorization
+@{
+    PageLayout.Content.Title = L["Sugesstion"].Value;
+    PageLayout.Content.BreadCrumb.Add(L["Menu:Sugesstion"].Value);
+    PageLayout.Content.MenuItemName = JLaraSystemLengMenus.Sugesstion;
+}
+
+@section scripts
+{
+    <abp-script src="/Pages/Sugesstions/Sugesstion/index.js" />
+}
+@section styles
+{
+    <abp-style src="/Pages/Sugesstions/Sugesstion/index.css"/>
+}
+@section content_toolbar
+{
+	@if (await Authorization.IsGrantedAsync(JLaraSystemLengPermissions.Sugesstion.Create))
+    {
+        <abp-button id="NewSugesstionButton"
+            text="@L["CreateSugesstion"].Value"
+            icon="plus"
+            button-type="Primary" />
+    }
+}
+
+<abp-card>
+    <abp-card-body>
+        <abp-row class="mb-3">
+            <a abp-collapse-id="SugesstionCollapse" class="text-secondary">@L["TableFilter"] </a>
+        </abp-row>
+        <abp-dynamic-form abp-model="SugesstionFilter" id="SugesstionFilter" required-symbols="false" column-size="_3">
+            <abp-collapse-body id="SugesstionCollapse">
+                <abp-form-content />
+            </abp-collapse-body>
+        </abp-dynamic-form>
+        <hr />
+        <abp-table striped-rows="true" id="SugesstionTable" class="nowrap"/>
+    </abp-card-body>
+</abp-card>
