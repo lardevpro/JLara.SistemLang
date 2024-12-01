@@ -1,3 +1,5 @@
+using JLaraSystemLeng.Progress;
+using JLaraSystemLeng.Exercise;
 using System;
 using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.Uow;
@@ -45,6 +47,8 @@ namespace JLaraSystemLeng.EntityFrameworkCore;
                 /* Remove "includeAllEntities: true" to create
                  * default repositories only for aggregate roots */
             options.AddDefaultRepositories(includeAllEntities: true);
+            options.AddRepository<Exercise.Exercise, ExerciseRepository>();
+            options.AddRepository<Progres, ProgresRepository>();
         });
 
         Configure<AbpDbContextOptions>(options =>

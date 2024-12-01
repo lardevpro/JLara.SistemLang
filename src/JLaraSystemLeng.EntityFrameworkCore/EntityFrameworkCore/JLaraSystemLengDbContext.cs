@@ -55,15 +55,17 @@ public class JLaraSystemLengDbContext :
     public DbSet<IdentityLinkUser> LinkUsers { get; set; }
     public DbSet<IdentityUserDelegation> UserDelegations { get; set; }
     public DbSet<IdentitySession> Sessions { get; set; }
-    public DbSet<Progress.Progress> Progress { get; set; }//2º añadir modelo
+    public DbSet<Progres> Progress { get; set; }//2ï¿½ aï¿½adir modelo
     public DbSet<Sugesstion> Sugesstions { get; set; }
-    public DbSet<Exercises> Exercises { get; set; }
+    public DbSet<Exercise.Exercise> Exercises { get; set; }
 
     // Tenant Management
     public DbSet<Tenant> Tenants { get; set; }
     public DbSet<TenantConnectionString> TenantConnectionStrings { get; set; }
 
     #endregion
+    public DbSet<Exercise.Exercise> Exercise { get; set; }
+    public DbSet<Progres> Progres { get; set; }
 
     public JLaraSystemLengDbContext(DbContextOptions<JLaraSystemLengDbContext> options)
         : base(options)
@@ -96,25 +98,45 @@ public class JLaraSystemLengDbContext :
         //    //...
         //});
 
-        builder.Entity<Progress>(b =>
+        builder.Entity<Progres>(b =>
         {
             b.ToTable(JLaraSystemLengConsts.DbTablePrefix + nameof(Progress), JLaraSystemLengConsts.DbSchema);
             b.ConfigureByConvention(); //auto configure for the base class props
-            b.HasOne(p => p.User).WithMany().HasForeignKey(p => p.UserId);
+            b.HasOne<IdentityUser>().WithMany().HasForeignKey(p => p.UserId);
             //...
         });
         builder.Entity<Sugesstion>(b =>
         {
             b.ToTable(JLaraSystemLengConsts.DbTablePrefix + nameof(Process), JLaraSystemLengConsts.DbSchema);
             b.ConfigureByConvention(); //auto configure for the base class props
-            b.HasOne(p => p.User).WithMany().HasForeignKey(p => p.UserId);
+            b.HasOne<IdentityUser>().WithMany().HasForeignKey(p => p.UserId);
             //...
         });
-        builder.Entity<Exercises>(b =>
+        builder.Entity<Exercise.Exercise>(b =>
         {
             b.ToTable(JLaraSystemLengConsts.DbTablePrefix + "Exercises", JLaraSystemLengConsts.DbSchema);
             b.ConfigureByConvention(); //auto configure for the base class props
             //...
+        });
+
+
+        builder.Entity<Exercise.Exercise>(b =>
+        {
+            b.ToTable(JLaraSystemLengConsts.DbTablePrefix + "Exercises", JLaraSystemLengConsts.DbSchema);
+            b.ConfigureByConvention(); 
+            
+
+            /* Configure more properties here */
+        });
+
+
+        builder.Entity<Progres>(b =>
+        {
+            b.ToTable(JLaraSystemLengConsts.DbTablePrefix + "Progres", JLaraSystemLengConsts.DbSchema);
+            b.ConfigureByConvention(); 
+            
+
+            /* Configure more properties here */
         });
     }
 }
