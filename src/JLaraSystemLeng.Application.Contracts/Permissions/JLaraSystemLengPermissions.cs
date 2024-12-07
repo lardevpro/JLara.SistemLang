@@ -25,11 +25,4 @@ public static class JLaraSystemLengPermissions //1� declaracion de los permiso
         public const string Create = Default + ".Create";
         public const string Delete = Default + ".Delete";
     }
-    public class Sugesstion
-    {
-        public const string Default = GroupName + ".Sugesstion";
-        public const string Update = Default + ".Update";
-        public const string Create = Default + ".Create";
-        public const string Delete = Default + ".Delete";
-    }
 }

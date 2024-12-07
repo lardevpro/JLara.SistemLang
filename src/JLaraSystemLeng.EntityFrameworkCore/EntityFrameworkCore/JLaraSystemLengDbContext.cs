@@ -138,15 +138,5 @@ public class JLaraSystemLengDbContext :
 
             /* Configure more properties here */
         });
-
-
-        builder.Entity<Sugesstion>(b =>
-        {
-            b.ToTable(JLaraSystemLengConsts.DbTablePrefix + "Sugesstions", JLaraSystemLengConsts.DbSchema);
-            b.ConfigureByConvention(); 
-            
-
-            /* Configure more properties here */
-        });
     }
 }
