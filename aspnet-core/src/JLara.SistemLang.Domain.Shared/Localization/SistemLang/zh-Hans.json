@@ -4,6 +4,21 @@
     "AppName": "SistemLang",
     "Menu:Home": "首页",
     "Welcome": "欢迎",
-    "LongWelcomeMessage": "欢迎使用本应用程序。这是一个基于 ABP 框架的启动项目。更多信息，请访问 abp.io。"
+    "LongWelcomeMessage": "欢迎使用本应用程序。这是一个基于 ABP 框架的启动项目。更多信息，请访问 abp.io。",
+    "Permission:Exercise": "Exercise",
+    "Permission:Create": "Create",
+    "Permission:Update": "Update",
+    "Permission:Delete": "Delete",
+    "Menu:Exercise": "MenuExercise",
+    "Exercise": "Exercise",
+    "ExerciseUserId": "ExerciseUserId",
+    "ExercisePhrase": "ExercisePhrase",
+    "ExerciseDifficultyLevel": "ExerciseDifficultyLevel",
+    "ExerciseFocusArea": "ExerciseFocusArea",
+    "CreateExercise": "CreateExercise",
+    "EditExercise": "EditExercise",
+    "ExerciseDeletionConfirmationMessage": "Are you sure to delete the exercise {0}?",
+    "SuccessfullyDeleted": "Successfully deleted",
+    "TableFilter": "TableFilter"
   }
 }

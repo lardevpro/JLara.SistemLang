@@ -4,6 +4,21 @@
     "AppName": "SistemLang",
     "Menu:Home": "الصفحة الرئيسية",
     "Welcome": "مرحباً",
-    "LongWelcomeMessage": "مرحبا بكم في التطبيق. هذا مشروع بدء تشغيل يعتمد على إطار عمل ABP. لمزيد من المعلومات ، يرجى زيارة abp.io."
+    "LongWelcomeMessage": "مرحبا بكم في التطبيق. هذا مشروع بدء تشغيل يعتمد على إطار عمل ABP. لمزيد من المعلومات ، يرجى زيارة abp.io.",
+    "Permission:Exercise": "Exercise",
+    "Permission:Create": "Create",
+    "Permission:Update": "Update",
+    "Permission:Delete": "Delete",
+    "Menu:Exercise": "MenuExercise",
+    "Exercise": "Exercise",
+    "ExerciseUserId": "ExerciseUserId",
+    "ExercisePhrase": "ExercisePhrase",
+    "ExerciseDifficultyLevel": "ExerciseDifficultyLevel",
+    "ExerciseFocusArea": "ExerciseFocusArea",
+    "CreateExercise": "CreateExercise",
+    "EditExercise": "EditExercise",
+    "ExerciseDeletionConfirmationMessage": "Are you sure to delete the exercise {0}?",
+    "SuccessfullyDeleted": "Successfully deleted",
+    "TableFilter": "TableFilter"
   }
 }

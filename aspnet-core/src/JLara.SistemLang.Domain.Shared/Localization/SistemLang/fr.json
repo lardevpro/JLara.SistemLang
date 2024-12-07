@@ -1,9 +1,24 @@
 {
- "culture": "fr",
- "texts": {
-  "AppName": "SistemLang",
-  "Menu:Home": "Accueil",
-  "Welcome": "Bienvenue",
-  "LongWelcomeMessage": "Bienvenue dans l'application. Il s'agit d'un projet de démarrage basé sur le framework ABP. Pour plus d'informations, visitez abp.io."
- }
+  "culture": "fr",
+  "texts": {
+    "AppName": "SistemLang",
+    "Menu:Home": "Accueil",
+    "Welcome": "Bienvenue",
+    "LongWelcomeMessage": "Bienvenue dans l'application. Il s'agit d'un projet de démarrage basé sur le framework ABP. Pour plus d'informations, visitez abp.io.",
+    "Permission:Exercise": "Exercise",
+    "Permission:Create": "Create",
+    "Permission:Update": "Update",
+    "Permission:Delete": "Delete",
+    "Menu:Exercise": "MenuExercise",
+    "Exercise": "Exercise",
+    "ExerciseUserId": "ExerciseUserId",
+    "ExercisePhrase": "ExercisePhrase",
+    "ExerciseDifficultyLevel": "ExerciseDifficultyLevel",
+    "ExerciseFocusArea": "ExerciseFocusArea",
+    "CreateExercise": "CreateExercise",
+    "EditExercise": "EditExercise",
+    "ExerciseDeletionConfirmationMessage": "Are you sure to delete the exercise {0}?",
+    "SuccessfullyDeleted": "Successfully deleted",
+    "TableFilter": "TableFilter"
+  }
 }

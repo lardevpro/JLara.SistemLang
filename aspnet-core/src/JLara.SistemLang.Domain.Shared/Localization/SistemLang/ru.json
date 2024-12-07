@@ -4,6 +4,21 @@
     "AppName": "SistemLang",
     "Menu:Home": "Главная",
     "Welcome": "Добро пожаловать",
-    "LongWelcomeMessage": "Добро пожаловать в приложение. Этот запущенный проект основан на фреймворке ABP. Для получения дополнительной информации посетите сайт abp.io."
+    "LongWelcomeMessage": "Добро пожаловать в приложение. Этот запущенный проект основан на фреймворке ABP. Для получения дополнительной информации посетите сайт abp.io.",
+    "Permission:Exercise": "Exercise",
+    "Permission:Create": "Create",
+    "Permission:Update": "Update",
+    "Permission:Delete": "Delete",
+    "Menu:Exercise": "MenuExercise",
+    "Exercise": "Exercise",
+    "ExerciseUserId": "ExerciseUserId",
+    "ExercisePhrase": "ExercisePhrase",
+    "ExerciseDifficultyLevel": "ExerciseDifficultyLevel",
+    "ExerciseFocusArea": "ExerciseFocusArea",
+    "CreateExercise": "CreateExercise",
+    "EditExercise": "EditExercise",
+    "ExerciseDeletionConfirmationMessage": "Are you sure to delete the exercise {0}?",
+    "SuccessfullyDeleted": "Successfully deleted",
+    "TableFilter": "TableFilter"
   }
 }

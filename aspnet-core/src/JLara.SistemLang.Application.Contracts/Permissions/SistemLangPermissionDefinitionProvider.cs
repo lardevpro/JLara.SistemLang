@@ -1,4 +1,4 @@
-﻿using JLara.SistemLang.Localization;
+using JLara.SistemLang.Localization;
 using Volo.Abp.Authorization.Permissions;
 using Volo.Abp.Localization;
 
@@ -11,6 +11,11 @@ public class SistemLangPermissionDefinitionProvider : PermissionDefinitionProvid
         var myGroup = context.AddGroup(SistemLangPermissions.GroupName);
         //Define your own permissions here. Example:
         //myGroup.AddPermission(SistemLangPermissions.MyPermission1, L("Permission:MyPermission1"));
+
+        var exercisePermission = myGroup.AddPermission(SistemLangPermissions.Exercise.Default, L("Permission:Exercise"));
+        exercisePermission.AddChild(SistemLangPermissions.Exercise.Create, L("Permission:Create"));
+        exercisePermission.AddChild(SistemLangPermissions.Exercise.Update, L("Permission:Update"));
+        exercisePermission.AddChild(SistemLangPermissions.Exercise.Delete, L("Permission:Delete"));
     }
 
     private static LocalizableString L(string name)

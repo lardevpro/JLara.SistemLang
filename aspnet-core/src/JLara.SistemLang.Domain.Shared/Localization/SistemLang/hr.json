@@ -1,9 +1,24 @@
 {
-    "culture": "hr",
-    "texts": {
-        "AppName": "SistemLang",
-        "Menu:Home": "Početna",
-        "Welcome": "Dobrodošli",
-        "LongWelcomeMessage": "Dobrodošli u aplikaciju. Ovo je startup projekt temeljen na ABP framework-u. Za više informacija posjetite abp.io."
-    }
+  "culture": "hr",
+  "texts": {
+    "AppName": "SistemLang",
+    "Menu:Home": "Početna",
+    "Welcome": "Dobrodošli",
+    "LongWelcomeMessage": "Dobrodošli u aplikaciju. Ovo je startup projekt temeljen na ABP framework-u. Za više informacija posjetite abp.io.",
+    "Permission:Exercise": "Exercise",
+    "Permission:Create": "Create",
+    "Permission:Update": "Update",
+    "Permission:Delete": "Delete",
+    "Menu:Exercise": "MenuExercise",
+    "Exercise": "Exercise",
+    "ExerciseUserId": "ExerciseUserId",
+    "ExercisePhrase": "ExercisePhrase",
+    "ExerciseDifficultyLevel": "ExerciseDifficultyLevel",
+    "ExerciseFocusArea": "ExerciseFocusArea",
+    "CreateExercise": "CreateExercise",
+    "EditExercise": "EditExercise",
+    "ExerciseDeletionConfirmationMessage": "Are you sure to delete the exercise {0}?",
+    "SuccessfullyDeleted": "Successfully deleted",
+    "TableFilter": "TableFilter"
+  }
 }

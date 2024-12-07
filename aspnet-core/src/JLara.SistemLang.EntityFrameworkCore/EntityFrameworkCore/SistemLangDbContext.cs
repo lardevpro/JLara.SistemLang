@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.Data;
@@ -12,6 +12,8 @@ using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.TenantManagement;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
+using JLaraSystemLeng.Exercise;
+using Volo.Abp.EntityFrameworkCore.Modeling;
 
 namespace JLara.SistemLang.EntityFrameworkCore;
 
@@ -52,6 +54,7 @@ public class SistemLangDbContext :
     public DbSet<TenantConnectionString> TenantConnectionStrings { get; set; }
 
     #endregion
+    public DbSet<Exercise> Exercises { get; set; }
 
     public SistemLangDbContext(DbContextOptions<SistemLangDbContext> options)
         : base(options)
@@ -82,5 +85,15 @@ public class SistemLangDbContext :
         //    b.ConfigureByConvention(); //auto configure for the base class props
         //    //...
         //});
+
+
+        builder.Entity<Exercise>(b =>
+        {
+            b.ToTable(SistemLangConsts.DbTablePrefix + "Exercises", SistemLangConsts.DbSchema);
+            b.ConfigureByConvention(); 
+            
+
+            /* Configure more properties here */
+        });
     }
 }
