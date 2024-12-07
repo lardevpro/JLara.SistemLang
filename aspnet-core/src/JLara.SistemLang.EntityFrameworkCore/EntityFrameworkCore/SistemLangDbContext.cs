@@ -94,8 +94,9 @@ public class SistemLangDbContext :
         builder.Entity<Exercise>(b =>
         {
             b.ToTable(SistemLangConsts.DbTablePrefix + "Exercises", SistemLangConsts.DbSchema);
-            b.ConfigureByConvention(); 
-            
+            b.ConfigureByConvention();
+
+            b.HasOne<IdentityUser>().WithMany().HasForeignKey(p => p.UserId).OnDelete(DeleteBehavior.NoAction);
 
             /* Configure more properties here */
         });
@@ -104,8 +105,9 @@ public class SistemLangDbContext :
         builder.Entity<Progress>(b =>
         {
             b.ToTable(SistemLangConsts.DbTablePrefix + "Progresses", SistemLangConsts.DbSchema);
-            b.ConfigureByConvention(); 
-            
+            b.ConfigureByConvention();
+
+            b.HasOne<IdentityUser>().WithMany().HasForeignKey(p => p.UserId).OnDelete(DeleteBehavior.NoAction);
 
             /* Configure more properties here */
         });
@@ -114,7 +116,9 @@ public class SistemLangDbContext :
         builder.Entity<Sugesstion>(b =>
         {
             b.ToTable(SistemLangConsts.DbTablePrefix + "Sugesstions", SistemLangConsts.DbSchema);
-            b.ConfigureByConvention(); 
+            b.ConfigureByConvention();
+
+            b.HasOne<IdentityUser>().WithMany().HasForeignKey(p => p.UserId).OnDelete(DeleteBehavior.NoAction);
             
 
             /* Configure more properties here */
