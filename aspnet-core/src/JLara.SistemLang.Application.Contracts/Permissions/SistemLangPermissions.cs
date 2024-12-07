@@ -13,4 +13,11 @@ public static class SistemLangPermissions
         public const string Create = Default + ".Create";
         public const string Delete = Default + ".Delete";
     }
+    public class Progress
+    {
+        public const string Default = GroupName + ".Progress";
+        public const string Update = Default + ".Update";
+        public const string Create = Default + ".Create";
+        public const string Delete = Default + ".Delete";
+    }
 }

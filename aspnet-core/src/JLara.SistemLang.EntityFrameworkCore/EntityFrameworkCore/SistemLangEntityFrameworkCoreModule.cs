@@ -1,3 +1,4 @@
+using JLaraSystemLeng.Progresses;
 using JLaraSystemLeng.Exercise;
 using System;
 using Microsoft.Extensions.DependencyInjection;
@@ -43,6 +44,7 @@ public class SistemLangEntityFrameworkCoreModule : AbpModule
                  * default repositories only for aggregate roots */
             options.AddDefaultRepositories(includeAllEntities: true);
             options.AddRepository<Exercise, ExerciseRepository>();
+            options.AddRepository<Progress, ProgressRepository>();
         });
 
         Configure<AbpDbContextOptions>(options =>

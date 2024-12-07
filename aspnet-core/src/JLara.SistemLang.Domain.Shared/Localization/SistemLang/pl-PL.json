@@ -19,6 +19,17 @@
     "EditExercise": "EditExercise",
     "ExerciseDeletionConfirmationMessage": "Are you sure to delete the exercise {0}?",
     "SuccessfullyDeleted": "Successfully deleted",
-    "TableFilter": "TableFilter"
+    "TableFilter": "TableFilter",
+    "Permission:Progress": "Progress",
+    "Menu:Progress": "MenuProgress",
+    "Progress": "Progress",
+    "ProgressUserId": "ProgressUserId",
+    "ProgressPracticeDate": "ProgressPracticeDate",
+    "ProgressPronunciationAccuracy": "ProgressPronunciationAccuracy",
+    "ProgressRecommendation": "ProgressRecommendation",
+    "ProgressDifficultyLevel": "ProgressDifficultyLevel",
+    "CreateProgress": "CreateProgress",
+    "EditProgress": "EditProgress",
+    "ProgressDeletionConfirmationMessage": "Are you sure to delete the progress {0}?"
   }
 }

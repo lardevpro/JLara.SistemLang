@@ -2,9 +2,9 @@ using System;
 using Volo.Abp.Domain.Entities.Auditing;
 using Volo.Abp.Identity;
 
-namespace JLaraSystemLeng.Progress
+namespace JLaraSystemLeng.Progresses
 {
-    public class Progres: FullAuditedAggregateRoot<Guid>
+    public class Progress: FullAuditedAggregateRoot<Guid>
     {
         public Guid UserId { get; set; }
         public DateTime? PracticeDate { get; set; }
@@ -12,11 +12,11 @@ namespace JLaraSystemLeng.Progress
         public string? Recommendation { get; set; }
         public string? DifficultyLevel {get; set; } 
 
-    protected Progres()
+    protected Progress()
     {
     }
 
-    public Progres(
+    public Progress(
         Guid id,
         Guid userId,
         DateTime? practiceDate,
