@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { authGuard, permissionGuard } from '@abp/ng.core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
@@ -31,8 +32,12 @@ const routes: Routes = [
     path: 'learning',
     loadComponent: () => import('./components/learning/learning.component').then(m => m.LearningComponent),
   },
-  { path: '', redirectTo: '/home', pathMatch: 'full' 
-  }, // Ruta principal
+  { path: '', redirectTo: '/home', pathMatch: 'full'
+  },
+  {
+    path: 'identity',
+    loadChildren: () => import('@abp/ng.identity').then(m => m.IdentityModule.forLazy()),
+  }
 ];
 
 @NgModule({

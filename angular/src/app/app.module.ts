@@ -1,5 +1,5 @@
 import { CoreModule, provideAbpCore, withOptions } from '@abp/ng.core';
-import { provideAbpOAuth } from '@abp/ng.oauth';
+import { AbpOAuthModule, provideAbpOAuth } from '@abp/ng.oauth';
 import { provideSettingManagementConfig } from '@abp/ng.setting-management/config';
 import { provideFeatureManagementConfig } from '@abp/ng.feature-management';
 import { ThemeSharedModule, provideAbpThemeShared,} from '@abp/ng.theme.shared';
@@ -20,6 +20,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from "./components/footer/footer.component";
 import { HomeComponent } from "./home/home.component";
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { AccountModule } from '@abp/ng.account';
+import { IdentityModule } from '@volo/abp.ng.identity';
 
 
 
@@ -33,10 +35,12 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     CoreModule,
     ThemeLeptonXModule.forRoot(),
     SideMenuLayoutModule.forRoot(),
+    AccountModule,
+    IdentityModule,
     NavbarComponent,
     FooterComponent,
     HomeComponent,
-    
+
 ],
   providers: [
     APP_ROUTE_PROVIDER,

@@ -15,7 +15,7 @@ public class JLaraSystemLengApplicationAutoMapperProfile : Profile
          * into multiple profile classes for a better organization. */
         CreateMap<Exercise.Exercise, ExerciseDto>();
         CreateMap<CreateUpdateExerciseDto, Exercise.Exercise>(MemberList.Source);
-        CreateMap<Progres, ProgresDto>();
-        CreateMap<CreateUpdateProgresDto, Progres>(MemberList.Source);
+        CreateMap<Progress.Progres, ProgresDto>();
+        CreateMap<CreateUpdateProgresDto, Progress.Progres>(MemberList.Source);
     }
 }
