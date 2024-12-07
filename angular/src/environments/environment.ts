@@ -10,7 +10,7 @@ export const environment = {
     logoUrl: '',
   },
   oAuthConfig: {
-    issuer: 'https://localhost:44376/',
+    issuer: 'http://localhost:5000',
     redirectUri: baseUrl,
     clientId: 'SistemLang_App',
     responseType: 'code',
@@ -19,7 +19,7 @@ export const environment = {
   },
   apis: {
     default: {
-      url: 'https://localhost:44376',
+      url: 'http://localhost:5000',
       rootNamespace: 'JLara.SistemLang',
     },
   },
