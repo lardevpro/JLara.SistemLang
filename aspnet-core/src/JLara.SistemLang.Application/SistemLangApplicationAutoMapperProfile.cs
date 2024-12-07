@@ -2,6 +2,8 @@ using JLaraSystemLeng.Exercise;
 using JLaraSystemLeng.Exercise.Dtos;
 using JLaraSystemLeng.Progresses;
 using JLaraSystemLeng.Progresses.Dtos;
+using JLaraSystemLeng.Sugesstions;
+using JLaraSystemLeng.Sugesstions.Dtos;
 using AutoMapper;
 
 namespace JLara.SistemLang;
@@ -17,5 +19,7 @@ public class SistemLangApplicationAutoMapperProfile : Profile
         CreateMap<CreateUpdateExerciseDto, Exercise>(MemberList.Source);
         CreateMap<Progress, ProgressDto>();
         CreateMap<CreateUpdateProgressDto, Progress>(MemberList.Source);
+        CreateMap<Sugesstion, SugesstionDto>();
+        CreateMap<CreateUpdateSugesstionDto, Sugesstion>(MemberList.Source);
     }
 }

@@ -15,6 +15,7 @@ using Volo.Abp.TenantManagement.EntityFrameworkCore;
 using JLaraSystemLeng.Exercise;
 using Volo.Abp.EntityFrameworkCore.Modeling;
 using JLaraSystemLeng.Progresses;
+using JLaraSystemLeng.Sugesstions;
 
 namespace JLara.SistemLang.EntityFrameworkCore;
 
@@ -57,6 +58,7 @@ public class SistemLangDbContext :
     #endregion
     public DbSet<Exercise> Exercises { get; set; }
     public DbSet<Progress> Progresses { get; set; }
+    public DbSet<Sugesstion> Sugesstions { get; set; }
 
     public SistemLangDbContext(DbContextOptions<SistemLangDbContext> options)
         : base(options)
@@ -102,6 +104,16 @@ public class SistemLangDbContext :
         builder.Entity<Progress>(b =>
         {
             b.ToTable(SistemLangConsts.DbTablePrefix + "Progresses", SistemLangConsts.DbSchema);
+            b.ConfigureByConvention(); 
+            
+
+            /* Configure more properties here */
+        });
+
+
+        builder.Entity<Sugesstion>(b =>
+        {
+            b.ToTable(SistemLangConsts.DbTablePrefix + "Sugesstions", SistemLangConsts.DbSchema);
             b.ConfigureByConvention(); 
             
 

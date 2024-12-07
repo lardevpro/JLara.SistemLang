@@ -30,6 +30,15 @@
     "ProgressDifficultyLevel": "ProgressDifficultyLevel",
     "CreateProgress": "CreateProgress",
     "EditProgress": "EditProgress",
-    "ProgressDeletionConfirmationMessage": "Are you sure to delete the progress {0}?"
+    "ProgressDeletionConfirmationMessage": "Are you sure to delete the progress {0}?",
+    "Permission:Sugesstion": "Sugesstion",
+    "Menu:Sugesstion": "MenuSugesstion",
+    "Sugesstion": "Sugesstion",
+    "SugesstionUserId": "SugesstionUserId",
+    "SugesstionSugesstionText": "SugesstionSugesstionText",
+    "SugesstionSugesstionCreationDate": "SugesstionSugesstionCreationDate",
+    "CreateSugesstion": "CreateSugesstion",
+    "EditSugesstion": "EditSugesstion",
+    "SugesstionDeletionConfirmationMessage": "Are you sure to delete the sugesstion {0}?"
   }
 }

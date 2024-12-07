@@ -21,6 +21,11 @@ public class SistemLangPermissionDefinitionProvider : PermissionDefinitionProvid
         progressPermission.AddChild(SistemLangPermissions.Progress.Create, L("Permission:Create"));
         progressPermission.AddChild(SistemLangPermissions.Progress.Update, L("Permission:Update"));
         progressPermission.AddChild(SistemLangPermissions.Progress.Delete, L("Permission:Delete"));
+
+        var sugesstionPermission = myGroup.AddPermission(SistemLangPermissions.Sugesstion.Default, L("Permission:Sugesstion"));
+        sugesstionPermission.AddChild(SistemLangPermissions.Sugesstion.Create, L("Permission:Create"));
+        sugesstionPermission.AddChild(SistemLangPermissions.Sugesstion.Update, L("Permission:Update"));
+        sugesstionPermission.AddChild(SistemLangPermissions.Sugesstion.Delete, L("Permission:Delete"));
     }
 
     private static LocalizableString L(string name)
