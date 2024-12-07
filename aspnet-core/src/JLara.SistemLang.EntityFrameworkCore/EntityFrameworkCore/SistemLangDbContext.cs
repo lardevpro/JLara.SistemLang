@@ -16,6 +16,7 @@ using JLaraSystemLeng.Exercise;
 using Volo.Abp.EntityFrameworkCore.Modeling;
 using JLaraSystemLeng.Progresses;
 using JLaraSystemLeng.Sugesstions;
+using JLara.SistemLang.UserExercises;
 
 namespace JLara.SistemLang.EntityFrameworkCore;
 
@@ -59,6 +60,7 @@ public class SistemLangDbContext :
     public DbSet<Exercise> Exercises { get; set; }
     public DbSet<Progress> Progresses { get; set; }
     public DbSet<Sugesstion> Sugesstions { get; set; }
+    public DbSet<UserExercise> UserExercises { get; set; }
 
     public SistemLangDbContext(DbContextOptions<SistemLangDbContext> options)
         : base(options)
@@ -96,8 +98,6 @@ public class SistemLangDbContext :
             b.ToTable(SistemLangConsts.DbTablePrefix + "Exercises", SistemLangConsts.DbSchema);
             b.ConfigureByConvention();
 
-            b.HasOne<IdentityUser>().WithMany().HasForeignKey(p => p.UserId).OnDelete(DeleteBehavior.NoAction);
-
             /* Configure more properties here */
         });
 
@@ -123,5 +123,18 @@ public class SistemLangDbContext :
 
             /* Configure more properties here */
         });
+
+
+        builder.Entity<UserExercise>(b =>
+        {
+            b.ToTable(SistemLangConsts.DbTablePrefix + "UserExercises", SistemLangConsts.DbSchema);
+            b.ConfigureByConvention();
+
+            b.HasOne<Exercise>().WithMany().HasForeignKey(p => p.ExerciseId).OnDelete(DeleteBehavior.NoAction);
+            b.HasOne<Sugesstion>().WithMany().HasForeignKey(p => p.SugesstionId).OnDelete(DeleteBehavior.NoAction);
+
+            /* Configure more properties here */
+        });
+
     }
 }

@@ -6,9 +6,7 @@ namespace JLaraSystemLeng.Exercise.Dtos;
 [Serializable]
 public class ExerciseDto : FullAuditedEntityDto<Guid>
 {
-    public Guid UserId { get; set; }
-
-    public int? Phrase { get; set; }
+    public string? Phrase { get; set; }
 
     public string? DifficultyLevel { get; set; }
 

@@ -26,6 +26,11 @@ public class SistemLangPermissionDefinitionProvider : PermissionDefinitionProvid
         sugesstionPermission.AddChild(SistemLangPermissions.Sugesstion.Create, L("Permission:Create"));
         sugesstionPermission.AddChild(SistemLangPermissions.Sugesstion.Update, L("Permission:Update"));
         sugesstionPermission.AddChild(SistemLangPermissions.Sugesstion.Delete, L("Permission:Delete"));
+
+        var userExercisePermission = myGroup.AddPermission(SistemLangPermissions.UserExercise.Default, L("Permission:UserExercise"));
+        userExercisePermission.AddChild(SistemLangPermissions.UserExercise.Create, L("Permission:Create"));
+        userExercisePermission.AddChild(SistemLangPermissions.UserExercise.Update, L("Permission:Update"));
+        userExercisePermission.AddChild(SistemLangPermissions.UserExercise.Delete, L("Permission:Delete"));
     }
 
     private static LocalizableString L(string name)

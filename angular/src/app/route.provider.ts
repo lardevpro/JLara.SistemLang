@@ -14,6 +14,44 @@ function configureRoutes(routesService: RoutesService) {
         iconClass: 'fas fa-home',
         order: 1,
         layout: eLayoutType.application,
+      }, {
+        path: '/contact',
+        name: '::Menu:Contact',
+        // iconClass: 'fas fa-home',
+        order: 2,
+        layout: eLayoutType.application,
+      }, {
+        path: '/courses',
+        name: '::Menu:Courses',
+        // iconClass: 'fas fa-home',
+        order: 3,
+        layout: eLayoutType.application,
+      }, {
+        path: '/languages',
+        name: '::Menu:Languages',
+        // iconClass: 'fas fa-home',
+        order: 4,
+        layout: eLayoutType.application,
+      },{
+        path: '/about',
+        name: '::Menu:About',
+        // iconClass: 'fas fa-home',
+        order: 4,
+        layout: eLayoutType.application,
+      },{
+        path: '/progress',
+        name: '::Menu:Progress',
+        // iconClass: 'fas fa-home',
+        order: 4,
+        layout: eLayoutType.application,
+        requiredPolicy: "SistemLang.Progress"
+      },{
+        path: '/learning',
+        name: '::Menu:Learning',
+        // iconClass: 'fas fa-home',
+        order: 4,
+        layout: eLayoutType.application,
+        requiredPolicy: "SistemLang.Exercise"
       },
     ]);
   };

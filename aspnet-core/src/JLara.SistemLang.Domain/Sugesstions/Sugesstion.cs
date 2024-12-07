@@ -9,7 +9,6 @@ namespace JLaraSystemLeng.Sugesstions
     {
        public Guid UserId { get; set; }
        public string? SugesstionText {  get; set; }
-       public DateTime? SugesstionCreationDate { get; set; }
 
     protected Sugesstion()
     {
@@ -18,13 +17,11 @@ namespace JLaraSystemLeng.Sugesstions
     public Sugesstion(
         Guid id,
         Guid userId,
-        string? sugesstionText,
-        DateTime? sugesstionCreationDate
+        string? sugesstionText
     ) : base(id)
     {
         UserId = userId;
         SugesstionText = sugesstionText;
-        SugesstionCreationDate = sugesstionCreationDate;
     }
     }
 }

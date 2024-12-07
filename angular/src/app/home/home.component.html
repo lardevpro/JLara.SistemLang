@@ -1,16 +1,9 @@
-  <div class="my-3 text-center">
-    <h3>Let's improve your application!</h3>
-    <p>Here are some links to help you get started:</p>
-  </div>
-  <div class="card mt-4 mb-5">
-    <div class="card-body">
-      <div class="row text-center justify-content-md-center">
-
-
-      </div>
-      <div class="row text-center mt-lg-3 justify-content-md-center">
-
-        
-      </div>
-    </div>
-  </div>
+<main class="container">
+    <!-- directiva appFadeIn para que se mueva y aparezca poco a poco-->
+    <br><br>
+    <app-hero appFadeIn></app-hero>  
+    <app-statistics appFadeIn></app-statistics>
+    <app-languages [languages]="languages" appFadeIn></app-languages>
+    <app-methodology appFadeIn></app-methodology>
+    <app-testimonials [testimonials]="testimonials" appFadeIn></app-testimonials>
+  </main>

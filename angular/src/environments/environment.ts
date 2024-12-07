@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   application: {
     baseUrl,
-    name: 'SistemLang',
+    name: 'GLOTTER',
     logoUrl: '',
   },
   oAuthConfig: {

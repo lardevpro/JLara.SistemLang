@@ -21,6 +21,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { APP_ROUTE_PROVIDER } from './route.provider';
 import { ThemeBasicModule, provideThemeBasicConfig } from '@abp/ng.theme.basic';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   imports: [
@@ -29,10 +30,11 @@ import { ThemeBasicModule, provideThemeBasicConfig } from '@abp/ng.theme.basic';
     AppRoutingModule,
     CoreModule,
     ThemeSharedModule,
-    
-    
+
+
     InternetConnectionStatusComponent,
                 ThemeBasicModule,
+                HomeComponent
   ],
   declarations: [AppComponent],
   providers: [

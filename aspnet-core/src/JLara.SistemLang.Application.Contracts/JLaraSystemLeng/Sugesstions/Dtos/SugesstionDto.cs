@@ -9,6 +9,4 @@ public class SugesstionDto : FullAuditedEntityDto<Guid>
     public Guid UserId { get; set; }
 
     public string? SugesstionText { get; set; }
-
-    public DateTime? SugesstionCreationDate { get; set; }
 }

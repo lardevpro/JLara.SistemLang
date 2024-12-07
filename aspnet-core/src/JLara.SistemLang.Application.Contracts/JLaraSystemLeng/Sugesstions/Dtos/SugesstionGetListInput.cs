@@ -12,7 +12,4 @@ public class SugesstionGetListInput : PagedAndSortedResultRequestDto
 
     [DisplayName("SugesstionSugesstionText")]
     public string? SugesstionText { get; set; }
-
-    [DisplayName("SugesstionSugesstionCreationDate")]
-    public DateTime? SugesstionCreationDate { get; set; }
 }

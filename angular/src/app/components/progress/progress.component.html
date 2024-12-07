@@ -1,0 +1,35 @@
+<div class="progress-card full-screen">
+    <div class="user-info">
+      <img [src]="userPhoto" alt="User Photo" class="user-photo" />
+      <div class="user-details">
+        <h2>{{ userName }}</h2>
+        <p>Nivel: {{ level }}</p>
+      </div>
+    </div>
+  
+    <div class="progress-container">
+      <label for="progress-bar">Progreso</label>
+      <div class="progress-bar">
+        <div
+          class="progress"
+          [style.width.%]="progress"
+          [attr.aria-valuenow]="progress"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        ></div>
+      </div>
+      <p>{{ progress }}% completado</p>
+    </div>
+  
+    <div class="recommendation">
+      <h3>Recomendación</h3>
+      <p>{{ recommendation }}</p>
+    </div>
+  
+    <div class="inspiration">
+      <blockquote>
+        "{{ inspirationalQuote }}"
+      </blockquote>
+    </div>
+  </div>
+  

@@ -24,6 +24,71 @@ namespace JLara.SistemLang.Migrations
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
+            modelBuilder.Entity("JLara.SistemLang.UserExercises.UserExercise", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("varchar(40)")
+                        .HasColumnName("ConcurrencyStamp");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("CreationTime");
+
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnType("char(36)")
+                        .HasColumnName("CreatorId");
+
+                    b.Property<Guid?>("DeleterId")
+                        .HasColumnType("char(36)")
+                        .HasColumnName("DeleterId");
+
+                    b.Property<DateTime?>("DeletionTime")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("DeletionTime");
+
+                    b.Property<Guid>("ExerciseId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("ExtraProperties")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("ExtraProperties");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("tinyint(1)")
+                        .HasDefaultValue(false)
+                        .HasColumnName("IsDeleted");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("LastModificationTime");
+
+                    b.Property<Guid?>("LastModifierId")
+                        .HasColumnType("char(36)")
+                        .HasColumnName("LastModifierId");
+
+                    b.Property<Guid>("SugesstionId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("UserPhrase")
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ExerciseId");
+
+                    b.HasIndex("SugesstionId");
+
+                    b.ToTable("AppUserExercises", (string)null);
+                });
+
             modelBuilder.Entity("JLaraSystemLeng.Exercise.Exercise", b =>
                 {
                     b.Property<Guid>("Id")
@@ -78,15 +143,10 @@ namespace JLara.SistemLang.Migrations
                         .HasColumnType("char(36)")
                         .HasColumnName("LastModifierId");
 
-                    b.Property<int?>("Phrase")
-                        .HasColumnType("int");
-
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("char(36)");
+                    b.Property<string>("Phrase")
+                        .HasColumnType("longtext");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("AppExercises", (string)null);
                 });
@@ -119,9 +179,6 @@ namespace JLara.SistemLang.Migrations
                         .HasColumnType("datetime(6)")
                         .HasColumnName("DeletionTime");
 
-                    b.Property<string>("DifficultyLevel")
-                        .HasColumnType("longtext");
-
                     b.Property<string>("ExtraProperties")
                         .IsRequired()
                         .HasColumnType("longtext")
@@ -141,14 +198,11 @@ namespace JLara.SistemLang.Migrations
                         .HasColumnType("char(36)")
                         .HasColumnName("LastModifierId");
 
-                    b.Property<DateTime?>("PracticeDate")
-                        .HasColumnType("datetime(6)");
+                    b.Property<decimal?>("ProgressValue")
+                        .HasColumnType("decimal(65,30)");
 
                     b.Property<decimal?>("PronunciationAccuracy")
                         .HasColumnType("decimal(65,30)");
-
-                    b.Property<string>("Recommendation")
-                        .HasColumnType("longtext");
 
                     b.Property<Guid>("UserId")
                         .HasColumnType("char(36)");
@@ -206,9 +260,6 @@ namespace JLara.SistemLang.Migrations
                     b.Property<Guid?>("LastModifierId")
                         .HasColumnType("char(36)")
                         .HasColumnName("LastModifierId");
-
-                    b.Property<DateTime?>("SugesstionCreationDate")
-                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("SugesstionText")
                         .HasColumnType("longtext");
@@ -2015,11 +2066,17 @@ namespace JLara.SistemLang.Migrations
                     b.ToTable("AbpTenantConnectionStrings", (string)null);
                 });
 
-            modelBuilder.Entity("JLaraSystemLeng.Exercise.Exercise", b =>
+            modelBuilder.Entity("JLara.SistemLang.UserExercises.UserExercise", b =>
                 {
-                    b.HasOne("Volo.Abp.Identity.IdentityUser", null)
+                    b.HasOne("JLaraSystemLeng.Exercise.Exercise", null)
                         .WithMany()
-                        .HasForeignKey("UserId")
+                        .HasForeignKey("ExerciseId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("JLaraSystemLeng.Sugesstions.Sugesstion", null)
+                        .WithMany()
+                        .HasForeignKey("SugesstionId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
                 });

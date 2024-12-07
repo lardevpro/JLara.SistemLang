@@ -1,3 +1,4 @@
+using JLara.SistemLang.UserExercises;
 using JLaraSystemLeng.Sugesstions;
 using JLaraSystemLeng.Progresses;
 using JLaraSystemLeng.Exercise;
@@ -47,6 +48,7 @@ public class SistemLangEntityFrameworkCoreModule : AbpModule
             options.AddRepository<Exercise, ExerciseRepository>();
             options.AddRepository<Progress, ProgressRepository>();
             options.AddRepository<Sugesstion, SugesstionRepository>();
+            options.AddRepository<UserExercise, UserExerciseRepository>();
         });
 
         Configure<AbpDbContextOptions>(options =>

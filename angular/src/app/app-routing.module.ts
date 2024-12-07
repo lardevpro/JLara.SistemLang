@@ -4,8 +4,32 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    pathMatch: 'full',
     loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
+  },
+  {
+    path: 'contact',
+    loadComponent: () => import('./components/contact/contact.component').then(m => m.ContactComponent),
+  },
+  {
+    path: 'courses',
+    loadComponent: () => import('./components/courses/courses.component').then(m => m.CoursesComponent),
+  },
+  {
+    path: 'languages',
+    loadComponent: () => import('./components/languages/languages.component').then(m => m.LanguagesComponent),
+  }
+  ,
+  {
+    path: 'about',
+    loadComponent: () => import('./components/about/about.component').then(m => m.AboutComponent),
+  },
+  {
+    path: 'progress',
+    loadComponent: () => import('./components/progress/progress.component').then(m => m.ProgressComponent),
+  },
+  {
+    path: 'learning',
+    loadComponent: () => import('./components/learning/learning.component').then(m => m.LearningComponent),
   },
   {
     path: 'account',

@@ -1,7 +1,6 @@
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using JLara.SistemLang.Permissions;
 using JLaraSystemLeng.Sugesstions.Dtos;
 using Volo.Abp.Application.Services;
 
@@ -11,11 +10,6 @@ namespace JLaraSystemLeng.Sugesstions;
 public class SugesstionAppService : CrudAppService<Sugesstion, SugesstionDto, Guid, SugesstionGetListInput, CreateUpdateSugesstionDto, CreateUpdateSugesstionDto>,
     ISugesstionAppService
 {
-    protected override string GetPolicyName { get; set; } = SistemLangPermissions.Sugesstion.Default;
-    protected override string GetListPolicyName { get; set; } = SistemLangPermissions.Sugesstion.Default;
-    protected override string CreatePolicyName { get; set; } = SistemLangPermissions.Sugesstion.Create;
-    protected override string UpdatePolicyName { get; set; } = SistemLangPermissions.Sugesstion.Update;
-    protected override string DeletePolicyName { get; set; } = SistemLangPermissions.Sugesstion.Delete;
 
     private readonly ISugesstionRepository _repository;
 
@@ -30,7 +24,6 @@ public class SugesstionAppService : CrudAppService<Sugesstion, SugesstionDto, Gu
         return (await base.CreateFilteredQueryAsync(input))
             .WhereIf(input.UserId != null, x => x.UserId == input.UserId)
             .WhereIf(input.SugesstionText != null, x => x.SugesstionText == input.SugesstionText)
-            .WhereIf(input.SugesstionCreationDate != null, x => x.SugesstionCreationDate == input.SugesstionCreationDate)
             ;
     }
 }

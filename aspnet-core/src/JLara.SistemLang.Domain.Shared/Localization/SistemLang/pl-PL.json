@@ -39,6 +39,16 @@
     "SugesstionSugesstionCreationDate": "SugesstionSugesstionCreationDate",
     "CreateSugesstion": "CreateSugesstion",
     "EditSugesstion": "EditSugesstion",
-    "SugesstionDeletionConfirmationMessage": "Are you sure to delete the sugesstion {0}?"
+    "SugesstionDeletionConfirmationMessage": "Are you sure to delete the sugesstion {0}?",
+    "Permission:UserExercise": "UserExercise",
+    "Menu:UserExercise": "MenuUserExercise",
+    "UserExercise": "UserExercise",
+    "UserExerciseExerciseId": "UserExerciseExerciseId",
+    "UserExerciseSugesstionId": "UserExerciseSugesstionId",
+    "UserExerciseUserPhrase": "UserExerciseUserPhrase",
+    "CreateUserExercise": "CreateUserExercise",
+    "EditUserExercise": "EditUserExercise",
+    "UserExerciseDeletionConfirmationMessage": "Are you sure to delete the userExercise {0}?",
+    "ProgressProgressValue": "ProgressProgressValue"
   }
 }
