@@ -7,7 +7,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "JLaraSystemLeng": {
+    "SistemLang": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -21,23 +21,25 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/JLaraSystemLeng",
+            "outputPath": "dist/SistemLang",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "allowedCommonJsDependencies": ["chart.js", "js-sha256"],
-            "assets": [
-              "src/favicon.ico",
-              "src/assets",
-              {
-                "glob": "web.config",
-                "input": ".",
-                "output": "."
-              }
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
+              {
+                "input": "node_modules/bootstrap/dist/css/bootstrap.rtl.min.css",
+                "inject": false,
+                "bundleName": "bootstrap-rtl.min"
+              },
+              {
+                "input": "node_modules/bootstrap/dist/css/bootstrap.min.css",
+                "inject": true,
+                "bundleName": "bootstrap-ltr.min"
+              },
               {
                 "input": "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
                 "inject": true,
@@ -63,71 +65,6 @@
                 "inject": true,
                 "bundleName": "ngx-datatable-material"
               },
-              {
-                "input": "node_modules/@volo/ngx-lepton-x.lite/assets/css/bootstrap-dim.css",
-                "inject": false,
-                "bundleName": "bootstrap-dim"
-              },
-              {
-                "input": "node_modules/@volo/ngx-lepton-x.lite/assets/css/ng-bundle.css",
-                "inject": false,
-                "bundleName": "ng-bundle"
-              },
-              {
-                "input": "node_modules/@volo/ngx-lepton-x.lite/assets/css/side-menu/layout-bundle.css",
-                "inject": false,
-                "bundleName": "layout-bundle"
-              },
-              {
-                "input": "node_modules/@abp/ng.theme.lepton-x/assets/css/abp-bundle.css",
-                "inject": false,
-                "bundleName": "abp-bundle"
-              },
-              {
-                "input": "node_modules/@volo/ngx-lepton-x.lite/assets/css/bootstrap-dim.rtl.css",
-                "inject": false,
-                "bundleName": "bootstrap-dim.rtl"
-              },
-              {
-                "input": "node_modules/@volo/ngx-lepton-x.lite/assets/css/font-bundle.css",
-                "inject": false,
-                "bundleName": "font-bundle"
-              },
-              {
-                "input": "node_modules/@volo/ngx-lepton-x.lite/assets/css/font-bundle.rtl.css",
-                "inject": false,
-                "bundleName": "font-bundle.rtl"
-              },
-              {
-                "input": "node_modules/@volo/ngx-lepton-x.lite/assets/css/ng-bundle.rtl.css",
-                "inject": false,
-                "bundleName": "ng-bundle.rtl"
-              },
-              {
-                "input": "node_modules/@volo/ngx-lepton-x.lite/assets/css/side-menu/layout-bundle.rtl.css",
-                "inject": false,
-                "bundleName": "layout-bundle.rtl"
-              },
-              {
-                "input": "node_modules/@abp/ng.theme.lepton-x/assets/css/abp-bundle.rtl.css",
-                "inject": false,
-                "bundleName": "abp-bundle.rtl"
-              },
-              {
-                "input": "node_modules/bootstrap-icons/font/bootstrap-icons.css",
-                "inject": true,
-                "bundleName": "bootstrap-icons"
-              },
-              {
-                "input": "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
-                "inject": true,
-                "bundleName": "fontawesome-all.min"
-              },
-              {
-                "input": "node_modules/bootstrap/dist/css/bootstrap.min.css",
-                "inject": true,
-                "bundleName": "bootstrap"
-              },
               "src/styles.scss"
             ],
             "scripts": []
@@ -143,7 +80,7 @@
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kb",
-                  "maximumError": "100kb"
+                  "maximumError": "4kb"
                 }
               ],
               "fileReplacements": [
@@ -169,10 +106,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "JLaraSystemLeng:build:production"
+              "buildTarget": "SistemLang:build:production"
             },
             "development": {
-              "buildTarget": "JLaraSystemLeng:build:development"
+              "buildTarget": "SistemLang:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -180,7 +117,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "JLaraSystemLeng:build"
+            "buildTarget": "SistemLang:build"
           }
         },
         "test": {

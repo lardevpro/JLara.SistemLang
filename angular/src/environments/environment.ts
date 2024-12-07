@@ -1,31 +1,26 @@
- import { Environment } from '@abp/ng.core';
+import { Environment } from '@abp/ng.core';
 
 const baseUrl = 'http://localhost:4200';
-
-const oAuthConfig = {
-  issuer: 'https://localhost:44333/',
-  redirectUri: baseUrl,
-  clientId: 'JLaraSystemLeng_App',
-  responseType: 'code',
-  scope: 'offline_access JLaraSystemLeng',
-  requireHttps: true,
-};
 
 export const environment = {
   production: false,
   application: {
     baseUrl,
-    name: 'JLaraSystemLeng',
+    name: 'SistemLang',
+    logoUrl: '',
   },
-  oAuthConfig,
+  oAuthConfig: {
+    issuer: 'https://localhost:44376/',
+    redirectUri: baseUrl,
+    clientId: 'SistemLang_App',
+    responseType: 'code',
+    scope: 'offline_access SistemLang',
+    requireHttps: true,
+  },
   apis: {
     default: {
-      url: 'https://localhost:44333',
-      rootNamespace: 'JLaraSystemLeng',
-    },
-    AbpAccountPublic: {
-      url: oAuthConfig.issuer,
-      rootNamespace: 'AbpAccountPublic',
+      url: 'https://localhost:44376',
+      rootNamespace: 'JLara.SistemLang',
     },
   },
 } as Environment;

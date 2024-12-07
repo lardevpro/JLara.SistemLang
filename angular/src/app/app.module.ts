@@ -1,14 +1,18 @@
 import { CoreModule, provideAbpCore, withOptions } from '@abp/ng.core';
-import { AbpOAuthModule, provideAbpOAuth } from '@abp/ng.oauth';
-import { provideSettingManagementConfig } from '@abp/ng.setting-management/config';
-import { provideFeatureManagementConfig } from '@abp/ng.feature-management';
-import { ThemeSharedModule, provideAbpThemeShared,} from '@abp/ng.theme.shared';
-import { provideIdentityConfig } from '@abp/ng.identity/config';
-import { provideAccountConfig } from '@abp/ng.account/config';
-import { provideTenantManagementConfig } from '@abp/ng.tenant-management/config';
 import { registerLocale } from '@abp/ng.core/locale';
-import { ThemeLeptonXModule } from '@abp/ng.theme.lepton-x';
-import { SideMenuLayoutModule } from '@abp/ng.theme.lepton-x/layouts';
+import {
+  InternetConnectionStatusComponent,
+  ThemeSharedModule,
+  provideAbpThemeShared,
+} from '@abp/ng.theme.shared';
+import { provideFeatureManagementConfig } from '@abp/ng.feature-management';
+import { provideAbpOAuth } from '@abp/ng.oauth';
+import { provideIdentityConfig } from '@abp/ng.identity/config';
+import { provideSettingManagementConfig } from '@abp/ng.setting-management/config';
+import { provideTenantManagementConfig } from '@abp/ng.tenant-management/config';
+import { provideAccountConfig } from '@abp/ng.account/config';
+
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,48 +20,37 @@ import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { APP_ROUTE_PROVIDER } from './route.provider';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { FooterComponent } from "./components/footer/footer.component";
-import { HomeComponent } from "./home/home.component";
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { AccountModule } from '@abp/ng.account';
-import { IdentityModule } from '@volo/abp.ng.identity';
-
-
+import { ThemeBasicModule, provideThemeBasicConfig } from '@abp/ng.theme.basic';
 
 @NgModule({
-  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    ThemeSharedModule,
     CoreModule,
-    ThemeLeptonXModule.forRoot(),
-    SideMenuLayoutModule.forRoot(),
-    AccountModule,
-    IdentityModule,
-    NavbarComponent,
-    FooterComponent,
-    HomeComponent,
-
-],
+    ThemeSharedModule,
+    
+    
+    InternetConnectionStatusComponent,
+                ThemeBasicModule,
+  ],
+  declarations: [AppComponent],
   providers: [
     APP_ROUTE_PROVIDER,
     provideAbpCore(
       withOptions({
         environment,
         registerLocaleFn: registerLocale(),
-      }),
+      })
     ),
     provideAbpOAuth(),
-    provideIdentityConfig(),
-    provideSettingManagementConfig(),
-    provideFeatureManagementConfig(),
-    provideAccountConfig(),
-    provideTenantManagementConfig(),
     provideAbpThemeShared(),
-    provideAnimationsAsync(),
+    provideSettingManagementConfig(),
+    provideAccountConfig(),
+    provideIdentityConfig(),
+    provideTenantManagementConfig(),
+    provideFeatureManagementConfig(),
+    provideThemeBasicConfig(),
   ],
   bootstrap: [AppComponent],
 })

@@ -3,11 +3,9 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-    <app-navbar></app-navbar>
-      <main>
-        <router-outlet></router-outlet> <!-- Contenido dinámico según la ruta -->
-      </main>
-    <app-footer></app-footer>
+    <abp-loader-bar></abp-loader-bar>
+    <abp-dynamic-layout></abp-dynamic-layout>
+    <abp-internet-status></abp-internet-status>
   `,
 })
 export class AppComponent {}
