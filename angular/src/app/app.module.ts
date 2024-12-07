@@ -35,7 +35,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     SideMenuLayoutModule.forRoot(),
     NavbarComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    
 ],
   providers: [
     APP_ROUTE_PROVIDER,

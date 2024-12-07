@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { SpeechRecognitionService } from '../../service/speech-recognition.service'; // Servicio de reconocimiento de voz
-import { TextToSpeechService } from '../../service/text-to-speech.service'; // Servicio de síntesis de voz
-import { SoundService } from '../../service/sound.service'; // Servicio para sonidos
+import { SpeechRecognitionService } from '../../services/speech-recognition.service'; // Servicio de reconocimiento de voz
+import { TextToSpeechService } from '../../services/text-to-speech.service'; // Servicio de síntesis de voz
+import { SoundService } from '../../services/sound.service'; // Servicio para sonidos
 
 @Component({
   selector: 'app-decorative-learning',
